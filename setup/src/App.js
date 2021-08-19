@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
-// ATTENTION!!!!!!!!!!
-// I SWITCHED TO PERMANENT DOMAIN
+
 const url = "https://course-api.com/react-tabs-project";
 
 function App() {
-  const [data, setData] = useState([]); //porque es un array vacio?
+  const [data, setData] = useState([]);
   const [load, setLoad] = useState(true);
   const [value, setValue] = useState(0);
   const getData = async () => {
@@ -30,7 +29,7 @@ function App() {
       </>
     );
   }
-  const { title, dates, duties, company } = data[value]; //se pasa la info de solo un objeto en la list, este esta elegido con el value
+  const { title, dates, duties, company } = data[value];
   return (
     <>
       <section className="section">
@@ -45,7 +44,7 @@ function App() {
                 <button
                   className={`job-btn ${index === value && "active-btn"}`}
                   key={item.id}
-                  onClick={() => setValue(index)} //se cambia el valor del value, se lo setea al index del btn
+                  onClick={() => setValue(index)} 
                 >
                   {item.company}
                 </button>
